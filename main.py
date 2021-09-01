@@ -26,17 +26,5 @@ async def on_message(message):
     quote = get_quote()
     await message.channel.send(quote)
 
-@client.event
-async def on__raw_reaction_add(payload):
-  payload_message_id = payload.message_id
-  target_message_id = 882497078876602368
-
-  if payload_message_id == target_message_id:
-    print(payload.emoji.name)
-    if payload.emoji.name == ":sunglasses:":
-      print("reacted with sunglasses")
-    # to give that person a role
-
-
 keep_alive()
 client.run(os.getenv('TOKEN'))
